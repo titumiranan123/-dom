@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css animation</title>
+    <style>
+        .main{
+            width: 300px;
+            height: 300px;
+            border: 2px solid red;
+            position: relative;
+        }
+        .box{
+            width: 30px;
+            height: 30px;
+            border: 2px solid red;
+            background: green;
+            position: absolute;
+            top :0px;
+            left :0px;
+            animation-name: box;
+            animation-duration: 5s;
+        }
+        @keyframes box{
+            0%{
+                top:0px;
+                left:0px;
+                background: green;
+            }
+            25%{
+                top:0px;
+                left:270px;
+                background: green;
+            }
+            50%{
+                top:270px;
+                left:270px;
+                background: rgb(155, 200, 41);
+            }
+            75%{
+                top:300px;
+                right:300px;
+                background: rgb(155, 200, 41);
+            }
+            100%{
+                bottom:300px;
+                right:300px;
+                background: rgb(155, 200, 41);
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+
+        </div>
+    </div>
+</body>
+</html>
