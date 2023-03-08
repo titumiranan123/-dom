@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kanyee</title>
+</head>
+<body>
+        <section>
+            <h2>Kanye Quotes</h2> 
+            <p id="quotes"></p>
+            <button id="blockquotes">Dataload</button>
+        </section>
+        <script>
+            document.getElementById('blockquotes').addEventListener("click",function(){
+                fetch('https://api.kanye.rest/')
+                .then(res => res.json())
+                .then(data => dataChange(data))
+            });
+            function  dataChange(data){
+                const blockquotes=document.getElementById('quotes');
+                // const span = document.createElement('span');
+                blockquotes.innerText = data.quote;
+                // console.log(data.quote);
+                // blockquotes.appendChild(span);
+            }
+        </script>
+</body>
+</html>

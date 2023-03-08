@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input id="input" type="text"> <button id="btn">post</button>
+
+    </div>
+    <div id="parent">
+
+    </div>
+    <script>
+        document.getElementById('btn').addEventListener('click', function () {
+            const input = document.getElementById('input').value;
+            // input='';
+            const container = document.getElementById('parent');
+            const p = document.createElement('p');
+            p.classList.add('post');
+            p.innerText = input;
+            container.appendChild(p);
+            const post = document.getElementsByClassName('post');
+            // console.log(post);
+            for (const p of post) {
+                p.addEventListener('click', function (e) {
+                    e.target.parentNode.removeChild(e.target);
+                })
+            }
+
+        })
+    </script>
+</body>
+
+</html>
